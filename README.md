@@ -116,7 +116,7 @@ Ports configuration:
 
 
 
-!\[Switch](LPAssignments/screenshots/switchconfig.png)
+![Test](https://github.com/Hechmi007/LPAssignments/blob/exercice-01-packettracer/screenshots/inet.png)
 
 
 
