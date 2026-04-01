@@ -4,13 +4,18 @@
 
 The objective of this exercise is to design and configure a mini network using Cisco Packet Tracer while respecting VLAN segmentation, DHCP configuration, and Internet connectivity.
 
-The network must allow communication between VLANs and provide Internet access using a Cisco 1941 router acting as a gateway, DHCP server, and VLAN manager.
+The network must allow communication between VLANs and provide Internet access using a Cisco 1941 router acting as:
+
+* VLAN manager
+* DHCP server
+* Internet gateway
+* Inter-VLAN router
 
 ---
 
 # 🖥️ Network Equipment
 
-The following equipment was used:
+The following equipment was used to build the mini lab:
 
 * 1 Cisco 1941 Router
 * 3 Switches
@@ -27,34 +32,36 @@ Each office contains:
 * 2 Desktop PCs
 * 1 IP Phone
 
+This simulates a small enterprise network with multiple departments.
+
 ---
 
 # 🌐 VLAN Design
 
-Each switch was configured with the required VLANs and port assignments.
+Each switch was configured with VLANs and port assignments as required.
 
 | Port        | Usage               | VLAN    |
 | ----------- | ------------------- | ------- |
 | Port 8      | Administration      | VLAN 30 |
-| Ports 6-7   | Desktop PCs         | VLAN 20 |
+| Ports 6-7   | PC fixes            | VLAN 20 |
 | Ports 4-5   | Wi-Fi Access Points | VLAN 10 |
 | Ports 2-3   | IP Phones           | VLAN 1  |
 | Ports 1 & 9 | Uplink              | Trunk   |
 
-The trunk ports connect switches to the router and allow VLAN traffic to pass between devices.
+The trunk ports connect switches to the router and allow VLAN traffic to pass between all network devices.
 
 ---
 
 # 📡 IP Addressing Plan
 
-| VLAN    | Usage          | Network         | DHCP Range                    |
-| ------- | -------------- | --------------- | ----------------------------- |
-| VLAN 1  | VoIP           | 192.168.0.0/24  | 192.168.0.10 - 192.168.0.50   |
-| VLAN 10 | Wi-Fi          | 192.168.10.0/24 | 192.168.10.10 - 192.168.10.50 |
-| VLAN 20 | PC Fixes       | 192.168.20.0/24 | 192.168.20.10 - 192.168.20.50 |
-| VLAN 30 | Administration | 192.168.30.0/24 | 192.168.30.10 - 192.168.30.50 |
+| VLAN    | Usage          | Network         |
+| ------- | -------------- | --------------- |
+| VLAN 1  | VoIP           | 192.168.0.0/24  |
+| VLAN 10 | Wi-Fi          | 192.168.10.0/24 |
+| VLAN 20 | PC Fixes       | 192.168.20.0/24 |
+| VLAN 30 | Administration | 192.168.30.0/24 |
 
-The router distributes IP addresses automatically using DHCP.
+The router assigns IP addresses automatically using DHCP.
 
 ---
 
@@ -62,18 +69,19 @@ The router distributes IP addresses automatically using DHCP.
 
 ## 1️⃣ Switch Configuration
 
-* VLANs were created on all switches
-* Ports were assigned to their respective VLANs
-* Trunk ports were configured for uplinks
-* Configuration was saved on each switch
+* VLANs created
+* Ports assigned to VLANs
+* Trunk ports configured
+* Uplink configured
+* Configuration saved
 
 ### 📷 Switch Configuration
 
-![Switch Config 1](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/switchconfig.png)
+![Switch1](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/switchconfig.png)
 
-![Switch Config 2](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/switchconfig2.png)
+![Switch2](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/switchconfig2.png)
 
-![Switch Config 3](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/switchconfig3.png)
+![Switch3](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/switchconfig3.png)
 
 ---
 
@@ -81,18 +89,41 @@ The router distributes IP addresses automatically using DHCP.
 
 The router was configured to:
 
-* Manage VLANs using Router-on-a-Stick
-* Provide DHCP for all VLANs
-* Act as Internet gateway
+* Manage VLANs
 * Route traffic between VLANs
+* Provide DHCP
+* Provide Internet access
 
 ---
 
-## 3️⃣ Internet Configuration
+## 3️⃣ Device Configuration
 
-The router was connected to the Internet cloud and configured to allow external connectivity.
+All devices were connected and configured to obtain IP addresses automatically.
 
-### 📷 Internet Configuration
+### 📷 Laptop Configuration and Testing
+
+![Laptop](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/laptop1.png)
+
+![IP Phone](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/ipphone.png)
+
+---
+
+## 🎥 Connectivity and Setup Proof
+
+The following GIF shows:
+
+* Laptop configuration
+* DHCP IP assignment
+* Network setup
+* Connectivity testing
+
+![Network Test](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/Recording%202026-03-24%20014328.gif)
+
+---
+
+## 🌍 Internet Configuration
+
+### 📷 Internet Access
 
 ![Internet](https://raw.githubusercontent.com/Hechmi007/LPAssignments/exercice-01-packettracer/screenshots/internet.png)
 
@@ -100,14 +131,15 @@ The router was connected to the Internet cloud and configured to allow external 
 
 ---
 
-# 🧪 Connectivity Tests
+# 🧪 Tests Performed
 
-The following tests were performed:
-
-* Devices receive IP addresses automatically
-* Communication between VLANs works
-* Internet access is functional
-* Network connectivity verified using ping
+* VLAN segmentation verified
+* DHCP working on all VLANs
+* Devices receive IP automatically
+* Inter-VLAN communication successful
+* Laptop connectivity tested
+* Internet access verified
+* Network functioning correctly
 
 ---
 
@@ -115,17 +147,20 @@ The following tests were performed:
 
 The repository contains:
 
-* Packet Tracer file
-* Equipment configuration exports
+* Packet Tracer mini lab
+* Configurations
 * Screenshots
+* Testing GIF
 * README.md
 
 ---
 
 # ✅ Result
 
-The network was successfully configured with VLAN segmentation, DHCP, and Internet connectivity.
-All devices are able to communicate correctly and access the Internet, meeting the requirements of the exercise.
+The mini network was successfully designed and configured according to the requirements.
+
+All VLANs are functional, DHCP is working, and Internet connectivity is operational.
+The screenshots and GIF demonstrate the configuration and testing process.
 
 ---
 
