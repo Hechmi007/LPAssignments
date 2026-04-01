@@ -116,11 +116,11 @@ Ports configuration:
 
 
 
-!\[Switch](screenshots/switchconfig.png)
+!\[Switch](../screenshots/switchconfig.png)
 
 
 
-!\[Switch2](screenshots/switchconfig2.png)
+!\[Switch2](../screenshots/switchconfig2.png)
 
 
 
