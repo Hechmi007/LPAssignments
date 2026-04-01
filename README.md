@@ -116,7 +116,7 @@ Ports configuration:
 
 
 
-!\[Switch](../screenshots/switchconfig.png)
+!\[Switch](LPAssignments/screenshots/switchconfig.png)
 
 
 
